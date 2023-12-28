@@ -14,18 +14,21 @@ public class EnemySpawnController : MonoBehaviour
 
    IEnumerator SpawnNewEnemy()
     {
-        while(true)
-        {
-            yield return new WaitForSeconds(1/spawnRate);
-            float random = Random.Range(0.0f, 1.0f);
-            if (random < GameManager.Instance.difficulty * 0.1f)
-            {
-                Instantiate(enemyPrefab[0]);
-            }
-            else
-            {
-                Instantiate(enemyPrefab[1]);
-            }
-        }
+        yield return new WaitForSeconds(1 / spawnRate);
+        float random = Random.Range(0.0f, 1.0f);
+        Instantiate(enemyPrefab[0]);
+        //while (true)
+        //{
+        //    yield return new WaitForSeconds(1/spawnRate);
+        //    float random = Random.Range(0.0f, 1.0f);
+        //    if (random < GameManager.Instance.difficulty * 0.1f)
+        //    {
+        //        Instantiate(enemyPrefab[0]);
+        //    }
+        //    else
+        //    {
+        //        Instantiate(enemyPrefab[1]);
+        //    }
+        //}
     }
 }
